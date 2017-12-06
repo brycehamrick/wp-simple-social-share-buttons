@@ -5,12 +5,12 @@ if ( ! defined( 'WPINC' ) ){
 }
 
 /*
-Plugin Name: Social Share Floating Buttons
-Plugin URI: http://www.unaibamir.com
+Plugin Name: WP Simple Social Share Buttons
+Plugin URI: https://hamrick.es
 Description: Plugin for displaying floating social share icons on posts
-Author: Unaib Amir
-Version: 1.0
-Author URI: http://www.unaibamir.com
+Author: hamrick.es
+Version: 0.0.5
+Author URI: https://hamrick.es
 */
 
 
@@ -39,18 +39,18 @@ Class Social_Share_Button_Custom {
 	public function custom_social_share_buttons($content) {
 		global $post;
 		if( is_singular('post') && !is_home() ){
-		
-			// Get current page URL 
+
+			// Get current page URL
 			$sharerURL = urlencode(get_permalink());
-	 
+
 			// Get current page title
 			$sharerTitle = str_replace( ' ', '%20', get_the_title());
-			
+
 			// Get Post Thumbnail for pinterest
 			$postThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
 
 			$share_heading = __('Share this article:', 'pro');
-	 
+
 			// Construct sharing URL without using any script
 			$twitterURL = 'https://twitter.com/intent/tweet?text='.$sharerTitle.'&amp;url='.$sharerURL;
 			$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$sharerURL;
@@ -58,12 +58,12 @@ Class Social_Share_Button_Custom {
 			$bufferURL = 'https://bufferapp.com/add?url='.$sharerURL.'&amp;text='.$sharerTitle;
 			$whatsappURL = 'whatsapp://send?text='.$sharerTitle . ' ' . $sharerURL;
 			$linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$sharerURL.'&amp;title='.$sharerTitle;
-	 
+
 			// Based on popular demand added Pinterest too
 			$pinterestURL = 'https://pinterest.com/pin/create/button/?url='.$sharerURL.'&amp;media='.$postThumbnail[0].'&amp;description='.$sharerTitle;
-	 
+
 			// Add sharing button at the end of page/page content
-			
+
 			$content .= '<div id="sharer-float" class="shares-left hide-on-mobile">
 			   <ul class="share-list">
 			      <li class="share facebook"><a class="url" target="_blank" href="'.$facebookURL.'"><i class="fa fa-facebook"></i></a></li>
@@ -81,7 +81,7 @@ Class Social_Share_Button_Custom {
 				      <li class="share pinterest"><a class="url" target="_blank" href="'.$pinterestURL.'"><i class="fa fa-pinterest"></i></a></li>
 				</ul>
 			</div>';
-			
+
 			return $content;
 		}else{
 			// if not a post/page then don't include sharing button
