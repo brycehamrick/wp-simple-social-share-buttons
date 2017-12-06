@@ -1,0 +1,124 @@
+.share-list {
+    font-size: 14px;
+    line-height: 1em;
+    letter-spacing: 0.25px;
+    color: #fff;
+    margin: 0 0 1.313em 1.655em !important;    
+}
+.share-list .share {
+    border-radius: 15px;
+    margin: 5px 0 0 0;
+    border-radius: 50%;
+}
+.share-list .share:first-child {
+    margin-top: 0;
+}
+.share-list .url {
+    display: flex;
+    align-items: center;
+    padding: 8px 18px;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: none;
+    border:none;
+}
+.share-list .url {
+    /* display: flex; */
+    align-items: center;
+    padding: 15px 15px;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    color: #FFF !important;
+}
+.share.facebook {
+    background: #6788ce;
+}
+.share.twitter {
+    background: #29c5f6;
+}
+.share.linkedin {
+    background: #3a9bdc;
+}
+.share.googleplus {
+    background: #e75c3c;
+}
+.share.pinterest {
+    background: #C92228;
+}
+#sharer-float {
+    position: fixed;
+    left: 50%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    top: 140px;
+    position: fixed;
+    left: 0px;
+}
+.shares-left ul > li {
+    list-style-type: none;
+    margin: 0px 0 3px 0 !important;
+}
+.shares-left {
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+#content-sharer {
+    float: left;
+    width: 100%;
+    margin: 10px 0px 30px 0px !important;
+}
+div#content-sharer h4 {
+    margin-top: 1em !important;
+}
+ul.content-sharer-list {
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: left;
+    width: 100%;
+}
+ul.content-sharer-list .share {
+    float: left;
+    width: 30px;
+    height: 30px;
+    color: #FFF !important;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 5px;
+    line-height: 30px;
+    transition: all .2s ease-in-out;
+    position: relative;
+}
+ul.content-sharer-list .share .url {
+    color: #FFF !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 30px;
+    height: 30px;
+    line-height: 30px; 
+    display: inline-block;
+}
+ul.content-sharer-list .share:hover {
+    margin-top: -5px;
+}
+ul.content-sharer-list .share:hover .url {
+    padding-bottom: 40px;
+}
+
+@media screen and (max-width: 767px) {
+    #sharer-float {
+        display: none;
+        overflow: hidden;
+        opacity: 0 !important;
+    }
+}
