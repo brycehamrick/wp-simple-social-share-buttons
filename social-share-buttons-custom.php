@@ -74,7 +74,9 @@ Class Social_Share_Button_Custom {
 			// Based on popular demand added Pinterest too
 			$pinterestURL = 'https://pinterest.com/pin/create/button/?url='.$sharerURL.'&amp;media='.$postThumbnail[0].'&amp;description='.$sharerTitle;
 
-			error_log(var_export( $twitterURL , true ));
+			error_log(var_export( $meta , true ));
+			error_log(var_export( $twitterHandle , true ));
+
 			// Add sharing button at the end of page/page content
 
 			$content .= '<div id="sharer-float" class="shares-left hide-on-mobile">
