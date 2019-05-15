@@ -52,7 +52,7 @@ Class Social_Share_Button_Custom {
 			$share_heading = __('Share this article:', 'pro');
 
 			// Get Twitter Handle from db
-			$twitterHandle = get_option('twitter-hanlde');
+			$twitterHandle = get_option('twitter-hanlde', 'drbrighten;');
 
 			error_log(var_export($twitterHandle));
 			// Construct sharing URL without using any script
