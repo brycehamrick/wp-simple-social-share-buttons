@@ -54,7 +54,7 @@ Class Social_Share_Button_Custom {
 			// Get Twitter Handle from db
 			$twitterHandle = get_option('twitter-handle');
 
-			error_log(var_export($twitterHandle));
+			error_log(var_export($twitterHandle, true));
 			// Construct sharing URL without using any script
 			$twitterURL = 'https://twitter.com/intent/tweet?text='.$sharerTitle.'&amp;url='.$sharerURL;
 			$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$sharerURL;
