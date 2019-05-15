@@ -53,8 +53,6 @@ Class Social_Share_Button_Custom {
 
 			// Get Twitter Handle from db
 			$twitterHandle = get_option('twitter-handle');
-
-			error_log(var_export($twitterHandle, true));
 			// Construct sharing URL without using any script
 			$twitterURL = 'https://twitter.com/intent/tweet?text='.$sharerTitle." ".$twitterHandle.'&amp;url='.$sharerURL;
 			$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$sharerURL;
@@ -63,6 +61,7 @@ Class Social_Share_Button_Custom {
 			$whatsappURL = 'whatsapp://send?text='.$sharerTitle . ' ' . $sharerURL;
 			$linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$sharerURL.'&amp;title='.$sharerTitle;
 
+			error_log(var_export($twitterURL, true));			
 			// Based on popular demand added Pinterest too
 			$pinterestURL = 'https://pinterest.com/pin/create/button/?url='.$sharerURL.'&amp;media='.$postThumbnail[0].'&amp;description='.$sharerTitle;
 
