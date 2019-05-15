@@ -54,7 +54,7 @@ Class Social_Share_Button_Custom {
 			// Get Twitter Handle from meta tag
 			$twitterHandle = "@".get_option('twitter-handle');
 			// Construct sharing URL without using any script
-			$twitterURL = 'https://twitter.com/intent/tweet?text='.$sharerTitle.'&amp;url='.$sharerURL."%20".$twitterHandle;
+			$twitterURL = 'https://twitter.com/intent/tweet?text='.$sharerTitle.'&amp;url='.$sharerURL.'&amp;text='.$twitterHandle;
 			$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$sharerURL;
 			$googleURL = 'https://plus.google.com/share?url='.$sharerURL;
 			$bufferURL = 'https://bufferapp.com/add?url='.$sharerURL.'&amp;text='.$sharerTitle;
@@ -63,7 +63,7 @@ Class Social_Share_Button_Custom {
 			// Based on popular demand added Pinterest too
 			$pinterestURL = 'https://pinterest.com/pin/create/button/?url='.$sharerURL.'&amp;media='.$postThumbnail[0].'&amp;description='.$sharerTitle;
 
-			error_log(var_export( $twitterHandle , true ));
+			error_log(var_export( $twitterURL , true ));
 
 			// Add sharing button at the end of page/page content
 
