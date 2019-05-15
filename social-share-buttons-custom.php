@@ -51,8 +51,18 @@ Class Social_Share_Button_Custom {
 
 			$share_heading = __('Share this article:', 'pro');
 
-			// Get Twitter Handle from db
-			$twitterHandle = "@".get_option('twitter-handle');
+			// Get Twitter Handle from meta tag
+			$dom = new DOMDocument();
+			$dom->loadHTML($_SERVER['REQUEST_URI']);
+			$meta = $dom->getElementsByTagName('meta');
+
+			foreach ($meta->attributes as $attr) {
+				if ( $attr->name =- "twitter:site" ) {
+					return $twitterHandle = $attr->content;
+				} else {
+					return; 
+				}
+			};
 			
 			// Construct sharing URL without using any script
 			$twitterURL = 'https://twitter.com/intent/tweet?text='.$sharerTitle.'&amp;url='.$sharerURL."%20".$twitterHandle;
