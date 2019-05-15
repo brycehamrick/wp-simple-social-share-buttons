@@ -56,7 +56,7 @@ Class Social_Share_Button_Custom {
 
 			error_log(var_export($twitterHandle, true));
 			// Construct sharing URL without using any script
-			$twitterURL = 'https://twitter.com/intent/tweet?text='.$sharerTitle.'&amp;url='.$sharerURL;
+			$twitterURL = 'https://twitter.com/intent/tweet?text='.$sharerTitle.'&amp;url='.$sharerURL." ".$twitterHandle;
 			$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$sharerURL;
 			$googleURL = 'https://plus.google.com/share?url='.$sharerURL;
 			$bufferURL = 'https://bufferapp.com/add?url='.$sharerURL.'&amp;text='.$sharerTitle;
